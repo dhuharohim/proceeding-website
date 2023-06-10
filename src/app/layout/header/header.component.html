@@ -1,0 +1,35 @@
+    <div class="header">
+        <!-- login register section -->
+        <div class="login">
+            <a routerLink="/login" routerLinkActive="active" [ngClass]="{ 'active': activeLink === 'login' }">Login</a>
+            <a routerLink="/register" routerLinkActive="active" [ngClass]="{ 'active': activeLink === 'register' }">Register</a>
+        </div>
+        
+        <!-- hero section -->
+        <div class="hero mt-2">
+            <img src="https://lawjournal.ub.ac.id/public/journals/1/pageHeaderLogoImage_en_US.png" alt="">
+        </div>
+
+        <!-- navbar section -->
+        <div class="row d-flex pt-3">
+            <div class="col-md-10 col-sm-12">
+                <div class="navbar navbar-expand-lg">
+                    <a routerLink="/about" routerLinkActive="active" [ngClass]="{ 'active': activeLink === 'about' }">About</a>
+                    <a routerLink="/submission" routerLinkActive="active" [ngClass]="{ 'active': activeLink === 'submission' }">Submission</a>
+                    <!-- <a href="">Editorial Team</a>
+                    <a href="">Current</a>
+                    <a href="">Archives</a>
+                    <a href="">Announcements</a>
+                    <a href="">Contact</a>  -->
+                </div>
+            </div>
+            <div class="search col-md-2 col-sm-12 d-flex justify-content-end">
+                <a class="d-flex">
+                    <mat-icon style="color:white; font-size: 20px;">search</mat-icon>
+                    <span style="cursor:pointer; font-weight: 500;">Search</span>
+                </a>
+            </div>
+
+        </div>
+        
+    </div>

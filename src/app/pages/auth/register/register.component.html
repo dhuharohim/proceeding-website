@@ -1,0 +1,83 @@
+<div class="container" style="padding: 2rem 3rem;">
+    <div class="row">
+        <div class="col-md-8 p-2">
+            <div class="card p-4">
+                <!-- breadcrumbs -->
+                <div class="breadcrumb">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a style="color: red;">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Register</li>
+                        </ol>
+                    </nav>
+                </div>
+
+                <!-- Register section -->
+                <div class="Register">
+                    <h4 class="mb-4">Register</h4>
+                        <div class="row pt-4">
+                            <div class="col-md-6">
+                                <!-- Profile -->
+                                <h5 class="mb-4">Profile</h5>
+                                <div class="form-group mt-2">
+                                    <label class="font-italic">Given Name<sup style="color: red;">*</sup> </label>
+                                    <input type="text" class="form-control" [(ngModel)]="givenName" required>
+                                </div>
+                                <div class="form-group mt-3">
+                                    <label class="font-italic">Family Name</label>
+                                    <input type="text" class="form-control" [(ngModel)]="familyName">
+                                    
+                                </div>
+                                <div class="form-group mt-3">
+                                    <label class="font-italic">Affiliation<sup style="color: red;">*</sup> </label>
+                                    <input type="text" class="form-control" [(ngModel)]="affiliation" required>
+                                </div>
+                                <div class="form-group mt-3">
+                                    <label class="font-italic">Country<sup style="color: red;">*</sup> </label>
+                                    <select name="country" class="form-control" [(ngModel)]="country" required>
+                                        <option value="" selected disabled>Choose country</option>
+                                        <option class="form-control" *ngFor="let country of countries" [value]="country.code">{{country.name}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <!-- Login -->
+                                <h5 class="mb-4">Login</h5>
+                                <div class="form-group mt-2">
+                                    <label class="font-italic">Email<sup style="color: red;">*</sup> </label>
+                                    <input type="email" class="form-control" [(ngModel)]="email" required>
+                                </div>
+                                <div class="form-group mt-3">
+                                    <label class="font-italic">Username<sup style="color: red;">*</sup> </label>
+                                    <input type="text" class="form-control" [(ngModel)]="username" required>
+                                </div>
+                                <div class="form-group mt-3">
+                                    <label class="font-italic">Password<sup style="color: red;">*</sup> </label>
+                                    <input type="password" class="form-control" [(ngModel)]="password" required>
+                                </div>
+                                <div class="form-group mt-3">
+                                    <label class="font-italic">Repeat password<sup style="color: red;">*</sup> </label>
+                                    <input type="password" class="form-control" [(ngModel)]="repeatPassword" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="checkbox mt-4">
+                            <mat-checkbox class="example-margin" [(ngModel)]="privacyStatement">Yes, I agree to have my data collected and stored according to the privacy statement.</mat-checkbox>
+                            <mat-checkbox class="mt-2" [(ngModel)]="publicationStatement">Yes, I would like to be notified of new publications and announcements.</mat-checkbox>
+                            <mat-checkbox class="mt-2" [(ngModel)]="contactedStatement">Yes, I would like to be contacted with requests to review submissions to this journal.</mat-checkbox>
+
+                            
+                        </div>
+                        <div class="button d-flex justify-content-end pt-5" style="gap:1rem;">
+                            <button type="submit" class="btn btn-outline-danger" (click)="register()">Register</button>
+                            <a class="btn btn-outline-info" routerLink="/login" routerLinkActive="active">Login</a>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 p-4">
+            <app-sidenav></app-sidenav>
+        </div>
+    </div>
+
+</div>
