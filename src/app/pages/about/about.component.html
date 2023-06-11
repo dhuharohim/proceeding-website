@@ -16,40 +16,40 @@
                 <div class="content">
                     <h4>About the Journal</h4>
                     <!-- Editorial Policies -->
-                    <div class="editorial mt-5">
+                    <div class="editorial-section mt-5">
                         <h6>Editorial Policies</h6>
                         <ul>
                             <li>
-                                <a href="">Focus & Scope</a>
+                                <a class="editorial" (click)="scrollTo('focus')">Focus & Scope</a>
                             </li>
                             <li>
-                                <a href="">Publication Ethics</a>
+                                <a class="editorial" (click)="scrollTo('peer')">Peer Review Process</a>
                             </li>
                             <li>
-                                <a href="">Open Access Policy</a>
+                                <a class="editorial" (click)="scrollTo('publication')">Publication Frequency</a>
                             </li>
                             <li>
-                                <a href="">Peer Review Process</a>
+                                <a class="editorial" (click)="scrollTo('policy')">Open Application Policy</a>
                             </li>
                             <li>
-                                <a href="">Reviewer Acknowledgement</a>
+                                <a class="editorial" (click)="scrollTo('copyright')">License and Copyright Policy</a>
                             </li>
                             <li>
-                                <a href="">Indexing & Abstracting</a>
+                                <a class="editorial" (click)="scrollTo('archiving')">Archiving</a>
                             </li>
                             <li>
-                                <a href="">Visitor Statistic</a>
+                                <a class="editorial" (click)="scrollTo('apcs')">Article Processing Charges (APCs)</a>
                             </li>
                             <li>
-                                <a href="">Article Processing Charges (APCs)</a>
+                                <a class="editorial" (click)="scrollTo('plagiarism')">Plagiarism Policy</a>
                             </li>
                             <li>
-                                <a href="">Scopus Tittle Evaluation Tracking</a>
+                                <a class="editorial" (click)="scrollTo('history')">Journal History</a>
                             </li>
                         </ul>
                     </div>
                     <!-- Focus and scope -->
-                    <div class="focus mt-5 p-2">
+                    <div class="focus mt-5 p-2" #focus>
                         <h6>Focus and Scope</h6>
                         <p>Brawijaya Law Journal : Journal of Legal Studies (BLJ) is an open access and peer-reviewed journal that aims to offer an international academic platform for cross-border legal research in goverment regulation, particularly in developing and emerging countries. These may include but are not limited to various fields such as: the practice of international law, human rights law, civil law, criminal law, constitutional and administrative law, legal pluralism governance, and another section related to contemporary issues in legal scholarship. 
 
@@ -57,7 +57,7 @@
                     </div>
 
                     <!-- peer review -->
-                    <div class="peer-review mt-2">
+                    <div class="peer-review mt-2" #peer>
                         <h6>Peer Review Process</h6>
 
                         <!-- p1 -->
@@ -65,7 +65,7 @@
                             Submitted paper will be firstly reviewed by the editors to determine whether the paper meet the edition theme and submission guidelines. Papers which meet the theme and the guidelines will be assigned to selected reviewers for peer-reviews. BLJ is a double blind peer-reviewed journal which involves reviewers based on their experties relevant to the topic of the paper. Final decision of paper acceptance is solely decided by the editors according to reviewers' comment.
                         </p>
                         <!-- image peer review -->
-                        <img src="https://lawjournal.ub.ac.id/public/site/images/yolanda/sop-submitting-at-blj3.jpg" alt="">
+                        <img width="100%" src="https://lawjournal.ub.ac.id/public/site/images/yolanda/sop-submitting-at-blj3.jpg" alt="">
 
                         <!-- p2 -->
                         <p class="mt-2">In short, the steps are:</p>
@@ -96,27 +96,27 @@
                     </div>
 
                     <!-- Publication frequency -->
-                    <div class="publication">
+                    <div class="publication" #publication>
                         <h6>Publication Frequency</h6>
                         <p>Brawijaya Law Journal is a journal published by Faculty of Law, Universitas Brawijaya two times a year in April and October.</p>
                     </div>
                     <!-- Open Access policy -->
-                    <div class="open-access">
+                    <div class="open-access" #policy>
                         <h6>Open Access Policy</h6>
                         <p>This journal provides immediate open access to its content on the principle that making research freely available to the public supports a greater global exchange of knowledge.</p>
                     </div>
                     <!-- License and Copyright Policy -->
-                    <div class="license">
+                    <div class="license" #copyright>
                         <h6>License and Copyright Policy</h6>
                         <p>The journal holds the copyright for each article published with work simultaneously licensed under a Creative Commons Attribution 4.0 International License (CC BY NC) that allows others to share the work with an acknowledgement of the work's authorship and initial publication in this journal.</p>
                     </div>
                     <!-- Archiving -->
-                    <div class="archive">
+                    <div class="archive" #archiving>
                         <h6>Archiving</h6>
                         <p>This journal utilizes the LOCKSS system to create a distributed archiving system among participating libraries and permits those libraries to create permanent archives of the journal for purposes of preservation and restoration. More...</p>
                     </div>
                     <!-- Article Processing Charges (APCs) -->
-                    <div class="apcs">
+                    <div class="apcs" #apcs> 
                         <h6>Article Processing Charges (APCs)</h6>
                         <p>Brawijaya Law Journal welcomes article submissions and does not charge Article Processing Charges (APCs).</p>
                     </div>
@@ -131,7 +131,7 @@
                         <p>For Libraries/Individuals, can read and download any full-text articles for free of charge.</p>
                     </div>
                     <!-- Plagiarism Policy -->
-                    <div class="plagiarism">
+                    <div class="plagiarism" #plagiarism>
                         <h6>Plagiarism Policy</h6>
                         <ul>
                             <li>Plagiarism and self-plagiarism are not allowed;</li>
@@ -146,7 +146,7 @@
                         </ol>
                     </div>
                     <!-- Journal History -->
-                    <div class="history">
+                    <div class="history" #history>
                         <h6>Journal History</h6>
                         <p>Brawijaya Law Journal was established by Law Faculty Brawijaya University at the end of 2014 to accomodate research conducted by scholars and professionals in the area of laws.
                         </p>
