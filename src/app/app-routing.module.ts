@@ -3,10 +3,10 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { 
-    path: '', 
-    redirectTo: '/about', 
-    pathMatch: 'full' 
+  {
+    path: '',
+    redirectTo: '/about',
+    pathMatch: 'full'
   },
   {
     path: 'about',
@@ -17,6 +17,16 @@ const routes: Routes = [
     path: 'submission',
     loadChildren: () => import('./pages/submission/submission.module').then(m => m.SubmissionModule),
     data: { isActive: 'submission' }
+  },
+  {
+    path: 'editorial-team',
+    loadChildren: () => import('./pages/editorial-team/editorial-team.module').then(m => m.EditorialTeamModule),
+    data: { isActive: 'editorial-team' }
+  },
+  {
+    path: 'contact',
+    loadChildren: () => import('./pages/contact/contact.module').then(m => m.ContactModule),
+    data: { isActive: 'contact' }
   },
   {
     path: 'login',

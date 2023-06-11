@@ -1,27 +1,24 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { SubmissionComponent } from './submission.component';
 import { SidenavModule } from 'src/app/layout/sidenav/sidenav.module';
-import { MatIconModule } from '@angular/material/icon';
-
+import { ContactComponent } from './contact.component';
 
 const routes: Routes = [
   {
     path:'',
-    component: SubmissionComponent
+    component: ContactComponent
   }
 ]
 
 @NgModule({
   declarations: [
-    SubmissionComponent
+    ContactComponent
   ],
   imports: [
     CommonModule,
     SidenavModule,
-    MatIconModule,
     RouterModule.forChild(routes)
   ]
 })
-export class SubmissionModule { }
+export class ContactModule { }
