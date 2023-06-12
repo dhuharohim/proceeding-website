@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -6,7 +6,7 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss']
 })
-export class AboutComponent {
+export class AboutComponent implements AfterViewInit {
   @ViewChild('focus') focus!: ElementRef;
   @ViewChild('peer') peer!: ElementRef;
   @ViewChild('publication') publication!: ElementRef;
@@ -20,14 +20,14 @@ export class AboutComponent {
   constructor(private route: ActivatedRoute) {}
 
   ngAfterViewInit() {
-    this.route.params.subscribe(params => {
-      console.log(params);
-      
-      const section = params['section'];
-      if (section) {
-        this.scrollTo(section);
-      }
+    // sidenav scrollTo
+    this.route.queryParams.subscribe(params => {
+      const key = params['key']; // Mengambil nilai dari query params
+      setTimeout(() => {
+        this.scrollTo(key);
+      }, 100);
     });
+    
   }
 
   scrollTo(event: string) {

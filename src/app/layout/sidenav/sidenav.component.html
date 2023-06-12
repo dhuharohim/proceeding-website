@@ -2,14 +2,23 @@
     <!-- about jurnal -->
     <ul class="list-group">
         <li class="list-group-item text-center" style="font-weight: 600; padding: 1rem;">About Kamu Hukum Journal</li>
-        <li class="list-group-item"> <a>Focus & scope</a> </li>
+        <li class="list-group-item"> 
+            <a style="cursor: pointer;" (click)="navigateTo('focus')">Focus & scope</a> 
+        </li>
         <li class="list-group-item">Publication Ethics</li>
-        <li class="list-group-item">Open Access Policy</li>
-        <li class="list-group-item">Peer Review Process</li>
+        <li class="list-group-item">
+            <a style="cursor: pointer;" (click)="navigateTo('policy')">Open Access Policy</a> 
+        </li>
+        <li class="list-group-item">
+            <a style="cursor: pointer;" (click)="navigateTo('peer')">Peer Review Process </a> 
+            
+        </li>
         <li class="list-group-item">Reviewer Acknowledgement</li>
         <li class="list-group-item">Indexing & Abstracting</li>
         <li class="list-group-item">Visitor Statistic</li>
-        <li class="list-group-item">Article Processing Charges (APCs)</li>
+        <li class="list-group-item">
+            <a style="cursor: pointer;" (click)="navigateTo('apcs')">Article Processing Charges (APCs) </a> 
+        </li>
         <li class="list-group-item">Scopus Tittle Evaluation Tracking</li>
     </ul>
     <!-- information for author -->
