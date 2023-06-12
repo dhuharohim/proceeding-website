@@ -1,1 +1,74 @@
-<p>current works!</p>
+<div class="container" style="padding: 2rem 3rem;">
+  <div class="row">
+      <div class="col-md-8 p-2">
+          <div class="card p-4">
+              <!-- breadcrumbs -->
+              <div class="breadcrumb">
+                  <nav aria-label="breadcrumb">
+                      <ol class="breadcrumb">
+                          <li class="breadcrumb-item"><a href="#">Home</a></li>
+                          <li class="breadcrumb-item"><a href="">Archives</a></li>
+                          <li class="breadcrumb-item" aria-current="page">Archives</li>
+
+                      </ol>
+                  </nav>
+              </div>
+
+              <!-- content -->
+              <div class="content">
+
+
+                <h5 style="font-family: Noto Serif; font-weight: 600; font-size: 20px;">Vol. 10 No. 1 (2023): The Discourse of Civil and Political Rights in Theory and Practice</h5>
+
+                <p>
+                  <span style="font-weight: bold;">Published</span>: 2023-04-30 <br>
+                </p>
+
+
+                <section class="article">
+                  <h5 style="font-family: Noto Serif; font-weight: 600; font-size: 20px;">Article</h5>
+
+                  <ng-container *ngFor="let article of articles">
+                    <div class="card mb-4" style="width: 100%;">
+                      <div class="card-body">
+                        <h5 class="card-title">{{article.title}}</h5>
+                        <p class="card-text"><span style="font-weight: bold;">{{article.author}},</span> {{article.university}}</p>
+
+                        <p class="card-text">Abstract views: {{article.view}}</p>
+
+                      </div>
+                    </div>
+                  </ng-container>
+                </section>
+
+                <section class="general-article">
+                  <h5 style="font-family: Noto Serif; font-weight: 600; font-size: 20px;">General Article</h5>
+
+                  <ng-container *ngFor="let generalArticle of generalArticles">
+                    <div class="card mb-4" style="width: 100%;">
+                      <div class="card-body">
+                        <h5 class="card-title">{{generalArticle.title}}</h5>
+                        <p class="card-text"><span style="font-weight: bold;">{{generalArticle.author}},</span> {{generalArticle.university}}</p>
+
+                        <p class="card-text">Abstract views: {{generalArticle.view}}</p>
+
+                      </div>
+                    </div>
+                  </ng-container>
+                </section>
+
+
+
+
+
+              </div>
+
+
+
+          </div>
+      </div>
+      <div class="col-md-4 p-4">
+          <app-sidenav></app-sidenav>
+      </div>
+  </div>
+</div>
