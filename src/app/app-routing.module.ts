@@ -37,6 +37,22 @@ const routes: Routes = [
     path: 'register',
     loadChildren: () => import('./pages/auth/register/register.module').then(m => m.RegisterModule),
     data: { isActive: 'register' }
+  },
+  {
+    path: 'publication-ethics',
+    loadChildren: () => import('./pages/publication-ethics/publication-ethics.module').then(m => m.PublicationEthicsModule),
+  },
+  {
+    path: 'reviewer-acknowledgements',
+    loadChildren: () => import('./pages/peer-review-list/peer-review-list.module').then(m => m.PeerReviewListModule),
+  },
+  {
+    path: 'indexing-sites',
+    loadChildren: () => import('./pages/indexing-sites/indexing-sites.module').then(m => m.IndexingSitesModule),
+  },
+  {
+    path: 'visitor-statistic',
+    loadChildren: () => import('./pages/visitor-statistic/visitor-statistic.module').then(m => m.VisitorStatisticModule),
   }
 ];
 

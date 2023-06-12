@@ -7,6 +7,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./submission.component.scss']
 })
 export class SubmissionComponent {
+  @ViewChild('author') author!: ElementRef;
 
   constructor(private route: ActivatedRoute) {}
 
@@ -41,9 +42,17 @@ export class SubmissionComponent {
   ];
 
   ngAfterViewInit() {
-
+    this.route.queryParams.subscribe(params => {
+      const key = params['key']; // Mengambil nilai dari query params
+      setTimeout(() => {
+        this.scrollTo(key);
+      }, 100);
+    });
   }
 
-
-
+  scrollTo(event: string) {
+    if(event === 'author-guidelines') { 
+      this.author.nativeElement.scrollIntoView({behavior: 'smooth'});
+    }
+  }
 }

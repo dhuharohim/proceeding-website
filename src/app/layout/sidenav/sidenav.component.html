@@ -5,17 +5,31 @@
         <li class="list-group-item"> 
             <a style="cursor: pointer;" (click)="navigateTo('focus')">Focus & scope</a> 
         </li>
-        <li class="list-group-item">Publication Ethics</li>
         <li class="list-group-item">
+            <a style="cursor: pointer; text-decoration: none; color: white;" [routerLink]="'/publication-ethics'" routerLinkActive="active" >Publication Ethics</a> 
+        </li>
+        <li class="list-group-item"> 
             <a style="cursor: pointer;" (click)="navigateTo('policy')">Open Access Policy</a> 
         </li>
         <li class="list-group-item">
             <a style="cursor: pointer;" (click)="navigateTo('peer')">Peer Review Process </a> 
             
         </li>
-        <li class="list-group-item">Reviewer Acknowledgement</li>
-        <li class="list-group-item">Indexing & Abstracting</li>
-        <li class="list-group-item">Visitor Statistic</li>
+        <li class="list-group-item">
+            <a style="cursor: pointer; text-decoration: none; color: white;" [routerLink]="'/reviewer-acknowledgements'" routerLinkActive="active" >
+                Reviewer Acknowledgement
+            </a> 
+        </li>
+        <li class="list-group-item">
+            <a style="cursor: pointer; text-decoration: none; color: white;" [routerLink]="'/indexing-sites'" routerLinkActive="active" >
+                Indexing & Abstracting
+            </a> 
+        </li>
+        <li class="list-group-item">
+            <a style="cursor: pointer; text-decoration: none; color: white;" [routerLink]="'/visitor-statistic'" routerLinkActive="active" >
+                Visitor Statistic
+            </a> 
+        </li>
         <li class="list-group-item">
             <a style="cursor: pointer;" (click)="navigateTo('apcs')">Article Processing Charges (APCs) </a> 
         </li>
@@ -24,7 +38,9 @@
     <!-- information for author -->
     <ul class="list-group mt-5">
         <li class="list-group-item text-center" style="font-weight: 600; padding: 1rem;">Information for Author</li>
-        <li class="list-group-item">Author Guidelines</li>
+        <li class="list-group-item">
+            <a style="cursor: pointer;" (click)="navigateTo('author-guidelines')">Author Guidelines </a> 
+        </li>
         <li class="list-group-item">Manuscript Template</li>
         <li class="list-group-item">Contemporary Comments</li>
         <li class="list-group-item">Copyright Transfer Agreement</li>
@@ -32,7 +48,7 @@
     </ul>
 
     <!-- submission button -->
-    <button class="btn btn-info mt-4">Make a submission</button>
+    <button class="btn btn-info mt-4" routerLink="/submission" >Make a submission</button>
 
     <!-- Tools -->
     <ul class="list-group mt-5 text-center">
@@ -40,16 +56,24 @@
             Tools
         </li>
         <li style="list-style: none;" class="mt-1">
-            <img width="100%" src="https://lawjournal.ub.ac.id/public/site/images/yolanda/62.png" alt="">
+            <a href="http://mendeley.com">
+                <img width="100%" src="https://lawjournal.ub.ac.id/public/site/images/yolanda/62.png" alt="">
+            </a>
         </li>
         <li style="list-style: none;" class="mt-1">
-            <img width="100%" src="https://lawjournal.ub.ac.id/public/site/images/yolanda/10.png" alt="">
+            <a href="http://grammarly.com">
+                <img width="100%" src="https://lawjournal.ub.ac.id/public/site/images/yolanda/10.png" alt="">
+            </a>
         </li>
         <li style="list-style: none;" class="mt-1">
-            <img width="100%" src="https://lawjournal.ub.ac.id/public/site/images/yolanda/92.png" alt="">
+            <a href="https://www.thomsonreuters.com/en.html">
+                <img width="100%" src="https://lawjournal.ub.ac.id/public/site/images/yolanda/92.png" alt="">
+            </a>
         </li>
         <li style="list-style: none;" class="mt-1">
-            <img width="100%" src="https://lawjournal.ub.ac.id/public/site/images/yolanda/102.png" alt="">
+            <a href="https://www.ithenticate.com/">
+                <img width="100%" src="https://lawjournal.ub.ac.id/public/site/images/yolanda/102.png" alt="">
+            </a>
         </li>
     </ul>
 
@@ -59,25 +83,39 @@
             Journal Index
         </li>
         <li style="list-style: none;" class="mt-1">
-            <img width="100%" src="https://lawjournal.ub.ac.id/public/site/images/yolanda/12.png" alt="">
+            <a href="https://doaj.org/toc/2503-0841">
+                <img width="100%" src="https://lawjournal.ub.ac.id/public/site/images/yolanda/12.png" alt="">
+            </a>
         </li>
         <li style="list-style: none;" class="mt-1">
-            <img width="100%" src="https://lawjournal.ub.ac.id/public/site/images/yolanda/32.png" alt="">
+            <a href="https://sinta.kemdikbud.go.id/journals/detail?id=8238">
+                <img width="100%" src="https://lawjournal.ub.ac.id/public/site/images/yolanda/32.png" alt="">
+            </a>
         </li>
         <li style="list-style: none;" class="mt-1">
-            <img width="100%" src="https://lawjournal.ub.ac.id/public/site/images/yolanda/22.png" alt="">
+            <a href="http://scholar.google.co.id/citations?user=_fUBqyMAAAAJ&hl=en">
+                <img width="100%" src="https://lawjournal.ub.ac.id/public/site/images/yolanda/22.png" alt="">
+            </a>
         </li>
         <li style="list-style: none;" class="mt-1">
-            <img width="100%" src="https://lawjournal.ub.ac.id/public/site/images/yolanda/52.png" alt="">
+            <a href="http://crossref.org">
+                <img width="100%" src="https://lawjournal.ub.ac.id/public/site/images/yolanda/52.png" alt="">
+            </a>
         </li>
         <li style="list-style: none;" class="mt-1">
-            <img width="100%" src="https://lawjournal.ub.ac.id/public/site/images/yolanda/42.png" alt="">
+            <a href="https://garuda.kemdikbud.go.id/journal/view/7384">
+                <img width="100%" src="https://lawjournal.ub.ac.id/public/site/images/yolanda/42.png" alt="">
+            </a>
         </li>
         <li style="list-style: none;" class="mt-1">
-            <img width="100%" src="https://lawjournal.ub.ac.id/public/site/images/yolanda/72.png" alt="">
+            <a href="http://isjd.pdii.lipi.go.id/direktori/detailpn.php?id=102852">
+                <img width="100%" src="https://lawjournal.ub.ac.id/public/site/images/yolanda/72.png" alt="">
+            </a>
         </li>
         <li style="list-style: none;" class="mt-1">
-            <img width="100%" src="https://lawjournal.ub.ac.id/public/site/images/dhiana/dimensions-ku.jpg" alt="">
+            <a href="https://app.dimensions.ai/discover/publication?search_mode=content&search_text=10.21776%2Fub.blj.2022.009.01.04&search_type=kws&search_field=doi&order=times_cited&and_facet_source_title=jour.1290988">
+                <img width="100%" src="https://lawjournal.ub.ac.id/public/site/images/dhiana/dimensions-ku.jpg" alt="">
+            </a>
         </li>
     </ul>
 </div>

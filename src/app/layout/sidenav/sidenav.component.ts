@@ -26,14 +26,25 @@ export class SidenavComponent {
     this.getData();
   }
   navigateTo(event: string) {
-      const queryParams = { key: event };
-      this.router.navigate(['/about'], { queryParams: queryParams });
-      setTimeout(() => {
-        const currentUrl = this.router.url;
-        const segments = currentUrl.split('?');
-        const routeWithoutQueryParams = segments[0];
-        this.router.navigateByUrl(routeWithoutQueryParams);
-      }, 500);
+      if(event === 'author-guidelines') {
+        const queryParams = { key: event };
+        this.router.navigate(['/submission'], { queryParams: queryParams });
+        setTimeout(() => {
+          const currentUrl = this.router.url;
+          const segments = currentUrl.split('?');
+          const routeWithoutQueryParams = segments[0];
+          this.router.navigateByUrl(routeWithoutQueryParams);
+        }, 500);
+      } else {
+        const queryParams = { key: event };
+        this.router.navigate(['/about'], { queryParams: queryParams });
+        setTimeout(() => {
+          const currentUrl = this.router.url;
+          const segments = currentUrl.split('?');
+          const routeWithoutQueryParams = segments[0];
+          this.router.navigateByUrl(routeWithoutQueryParams);
+        }, 500);
+      }
   }
 
   getData() {
