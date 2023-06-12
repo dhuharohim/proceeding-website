@@ -24,6 +24,11 @@ const routes: Routes = [
     data: { isActive: 'editorial-team' }
   },
   {
+    path: 'current',
+    loadChildren: () => import('./pages/current/current.module').then(m => m.CurrentModule),
+    data: { isActive: 'current' }
+  },
+  {
     path: 'contact',
     loadChildren: () => import('./pages/contact/contact.module').then(m => m.ContactModule),
     data: { isActive: 'contact' }
