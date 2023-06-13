@@ -1,0 +1,50 @@
+<div class="container" style="padding: 2rem 3rem;">
+  <div class="row">
+      <div class="col-md-8 p-2">
+          <div class="card p-4">
+              <!-- breadcrumbs -->
+              <div class="breadcrumb">
+                  <nav aria-label="breadcrumb">
+                      <ol class="breadcrumb">
+                          <li class="breadcrumb-item"><a href="#">Home</a></li>
+                          <li class="breadcrumb-item"><a href="">Archives</a></li>
+                          <li class="breadcrumb-item" aria-current="page">{{archive.author}}: {{archive.title}}</li>
+
+                      </ol>
+                  </nav>
+              </div>
+
+              <!-- content -->
+              <div class="content">
+
+
+                <h5 style="font-family: Noto Serif; font-weight: 600; font-size: 26px;"> {{archive.title}}</h5>
+
+                <p>
+                  <span style="font-weight: bold;">Published</span>: 2023-04-30 <br>
+                </p>
+
+                <div class="card">
+                  <div class="row no-gutters">
+                    <div class="col-md-4">
+                      <img src="assets/cover.jpg" class="card-img" alt="Image">
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <p class="card-text">{{archive.abstract}}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+
+
+          </div>
+      </div>
+      <div class="col-md-4 p-4">
+          <app-sidenav></app-sidenav>
+      </div>
+  </div>
+</div>

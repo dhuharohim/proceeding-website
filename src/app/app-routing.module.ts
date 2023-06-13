@@ -29,6 +29,11 @@ const routes: Routes = [
     data: { isActive: 'current' }
   },
   {
+    path: 'archives',
+    loadChildren: () => import('./pages/archives/archives.module').then(m => m.ArchivesModule),
+    data: { isActive: 'archives' }
+  },
+  {
     path: 'contact',
     loadChildren: () => import('./pages/contact/contact.module').then(m => m.ContactModule),
     data: { isActive: 'contact' }
