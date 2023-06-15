@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
+import axios from 'axios';
+import { environment } from 'src/app/environments/environment';
 
 @Component({
   selector: 'app-login',
@@ -7,7 +9,7 @@ import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-  username: any = '';
+  email: any = '';
   password: any = '';
   hide:boolean = true;
   horizontalPosition: MatSnackBarHorizontalPosition = 'center';
@@ -19,19 +21,34 @@ export class LoginComponent {
     
   }
   async login() {
-    if(this.username == '') {
-      this._snackBar.open('Username field is required', 'OK', {
-        horizontalPosition: this.horizontalPosition,
-        verticalPosition: this.verticalPosition,
+    // if(this.email == '') {
+    //   this._snackBar.open('email field is required', 'OK', {
+    //     horizontalPosition: this.horizontalPosition,
+    //     verticalPosition: this.verticalPosition,
+    //   });
+    //   return;
+    // }
+    // if(this.password == '') {
+    //   this._snackBar.open('Password field is required', 'OK', {
+    //     horizontalPosition: this.horizontalPosition,
+    //     verticalPosition: this.verticalPosition,
+    //   });
+    //   return;
+    // }
+    try {
+      const response = await axios.post(`${environment.apiUrl}/auth/login`, {
+        email: this.email,
+        password: this.password
+      }, {
+        headers: {
+          Accept: 'application/json',
+          "Content-Type" : 'application/json'
+        },
       });
-      return;
-    }
-    if(this.password == '') {
-      this._snackBar.open('Password field is required', 'OK', {
-        horizontalPosition: this.horizontalPosition,
-        verticalPosition: this.verticalPosition,
-      });
-      return;
+      console.log(response.data);
+      // Lakukan pemrosesan data selanjutnya di sini
+    } catch (error) {
+      // Lakukan penanganan kesalahan di sini
     }
   }
 }

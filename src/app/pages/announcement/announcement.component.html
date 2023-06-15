@@ -1,1 +1,36 @@
-<p>announcement works!</p>
+<div class="container" style="padding: 2rem 3rem">
+    <div class="row">
+        <div class="col-md-8 p-2">
+            <div class="card p-4">
+                <!-- breadcrumbs -->
+                <div class="breadcrumb">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a [routerLink]="'/about'"> Home </a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Announcements</li>
+                        </ol>
+                    </nav>
+                </div>
+                <!-- content -->
+                <div class="content">
+                    <h4 style="font-family: Noto Serif; font-weight: 600; font-size: 28px;">Announcements</h4>
+                    
+                    <!-- announcement -->
+                    <ng-container *ngFor="let announcement of announcements">
+                        <div class="card mb-4">
+                            <div class="card-body" style="cursor: pointer;" (click)="viewAnnounce(announcement)">
+                                <h5 class="card-title">{{announcement.title}}</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">{{announcement.date}}</h6>
+                                <p>{{ announcement.desc }}</p>
+                            </div>
+                        </div>
+                    </ng-container>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 p-4">
+            <app-sidenav></app-sidenav>
+        </div>
+    </div>    
+</div>

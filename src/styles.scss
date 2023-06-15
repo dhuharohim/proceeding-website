@@ -37,3 +37,8 @@ $kamuhukum-jurnal-theme: mat.define-light-theme((
 
 html, body app-root { height: 100%; width: 100%; display: block; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+a{
+  text-decoration: none !important;
+  color:red;
+}

@@ -63,7 +63,12 @@ const routes: Routes = [
   {
     path: 'visitor-statistic',
     loadChildren: () => import('./pages/visitor-statistic/visitor-statistic.module').then(m => m.VisitorStatisticModule),
-  }
+  },
+  {
+    path: 'announcement',
+    loadChildren: () => import('./pages/announcement/announcement.module').then(m => m.AnnouncementModule),
+    data: { isActive: 'announcement' }
+  },
 ];
 
 

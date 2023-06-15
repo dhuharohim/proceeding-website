@@ -1,0 +1,43 @@
+<div class="container" style="padding: 2rem 3rem">
+    <div class="row">
+        <div class="col-md-8 p-2">
+            <div class="card p-4">
+                <!-- breadcrumbs -->
+                <div class="breadcrumb">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a [routerLink]="'/about'">Home</a></li>
+                            <li class="breadcrumb-item"> <a [routerLink]="'/announcement'">Announcements</a> </li>
+                            <li class="breadcrumb-item active" aria-current="page">{{announcement.title}}</li>
+                        </ol>
+                    </nav>
+                </div>
+                <!-- content -->
+                <div class="content">
+                    <h4 style="font-family: Noto Serif; font-weight: 600; font-size: 28px;">Announcements</h4>
+                    
+                    <!-- announcement -->
+                    <div class="announcement mt-5">
+                        <h5 class="card-title">{{announcement.title}}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{announcement.date}}</h6>
+                        <p>{{ announcement.desc }}</p>
+                        
+                        <p>Submission Deadline: <strong>{{ announcement.deadline }}</strong></p>
+                        <p>Published at <strong>{{ announcement.published }}</strong></p>
+
+                        <p>An acceptable manuscript will meet the following general criteria:</p>
+                        <ul>
+                            <ng-container *ngFor="let a of announcement.criteria">
+                                <li>{{ a }}</li>
+                            </ng-container>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 p-4">
+            <app-sidenav></app-sidenav>
+        </div>
+    </div>    
+</div>
