@@ -14,7 +14,7 @@ export class SidenavComponent {
   @ViewChild('focus') focus!: ElementRef;
 
   constructor(
-    private router: Router, 
+    private router: Router,
     private route: ActivatedRoute,
     private apiService: ApiService
     ) { }
@@ -53,12 +53,12 @@ export class SidenavComponent {
         .then(res => {
           const data = res?.data;
           console.log(data.name);
-          
+
           this.journals = [
             { name: data.name, description: ''}
           ]
           console.log(this.journals);
-          
+
         })
         .catch(error => {
           console.error(error);
@@ -67,5 +67,7 @@ export class SidenavComponent {
       console.error(error);
     }
   }
+
+
 }
 

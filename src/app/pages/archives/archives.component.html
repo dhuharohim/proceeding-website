@@ -16,20 +16,26 @@
               <div class="content">
                 <h4 style="font-family: Noto Serif; font-weight: 600; font-size: 28px;">Archives</h4>
 
-                <div class="archives-content mt-4">
+                <div *ngFor="let archive of archives">
+                  <h2>{{ archive.name_edition }}</h2>
+                  <p>Volume: {{ archive.volume }}</p>
+                  <p>Issue: {{ archive.issue }}</p>
+                  <p>Description: {{ archive.description }}</p>
+                </div>
+
+                <!-- <div class="archives-content mt-4">
                   <ng-container *ngFor="let archive of archives">
                     <div class="card mb-4">
                       <div class="card-body" style="cursor: pointer;" (click)="goToView(archive)">
-                        <h5 class="card-title">{{archive.title}}</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">{{archive.author}}</h6>
+                        <h5 class="card-title">{{archive.name_edition}}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{archive.description}}</h6>
                       </div>
                     </div>
                   </ng-container>
-                </div>
+                </div> -->
 
 
-
-                <div>
+                <!-- <div>
                   <ng-container *ngFor="let archive of archives">
                   <div class="card mb-4">
                     <div class="row no-gutters">
@@ -38,13 +44,13 @@
                       </div>
                       <div class="col-md-8">
                         <div class="card-body">
-                          <p class="card-text">{{archive.abstract}}</p>
+                          <p class="card-text">{{archive.name_edition}}</p>
                         </div>
                       </div>
                     </div>
                   </div>
                   </ng-container>
-                </div>
+                </div> -->
 
 
 
