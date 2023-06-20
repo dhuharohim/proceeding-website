@@ -23,7 +23,7 @@ export class SidenavComponent {
     const currentUrl = this.router.routerState.snapshot.url;
     const segments = currentUrl.split('?');
     this.currentUrlRoute = segments[0];
-    this.getData();
+    // this.getData();
   }
   navigateTo(event: string) {
       if(event === 'author-guidelines') {
@@ -47,26 +47,26 @@ export class SidenavComponent {
       }
   }
 
-  getData() {
-    try {
-      this.apiService.getData('Journal data')
-        .then(res => {
-          const data = res?.data;
-          console.log(data.name);
+  // getData() {
+  //   try {
+  //     this.apiService.getData('Journal data')
+  //       .then(res => {
+  //         const data = res?.data;
+  //         console.log(data.name);
 
-          this.journals = [
-            { name: data.name, description: ''}
-          ]
-          console.log(this.journals);
+  //         this.journals = [
+  //           { name: data.name, description: ''}
+  //         ]
+  //         console.log(this.journals);
 
-        })
-        .catch(error => {
-          console.error(error);
-        });
-    } catch (error) {
-      console.error(error);
-    }
-  }
+  //       })
+  //       .catch(error => {
+  //         console.error(error);
+  //       });
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // }
 
 
 }

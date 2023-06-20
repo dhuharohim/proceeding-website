@@ -14,6 +14,8 @@ export class ArchivesComponent {
   constructor(private router: Router) { }
 
   public archives: any = [];
+  public isLoading: boolean = false;
+
   // archives = [
   //   {
   //     id: 1,
@@ -52,18 +54,27 @@ export class ArchivesComponent {
   // ];
 
   getData() {
+    this.isLoading = true;
+
     const apiUrl = environment.apiUrl + '/edition/archieved'; // Mendapatkan URL dari environment dan menambahkan '/jurnals'
     axios.get(apiUrl)
     .then(response => {
-      const responseData = response.data;
+      const responseData = response.data.data;
+
+      console.log('data', responseData);
+
       if (Array.isArray(responseData)) {
         this.archives = responseData;
       } else {
         this.archives = [responseData];
       }
+      this.isLoading = false;
+
     })
     .catch(error => {
       console.error('Failed to get data:', error);
+      this.isLoading = false;
+
     });
   }
 
