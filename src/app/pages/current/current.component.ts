@@ -11,6 +11,7 @@ import { environment } from 'src/app/environments/environment';
 export class CurrentComponent {
 
   edition: any;
+  isLoading: boolean = false;
 
   constructor(private router: Router) { }
 
@@ -20,13 +21,13 @@ export class CurrentComponent {
     this.getCurrentData();
   }
   async getCurrentData() {
+    this.isLoading = true;
     const apiUrl = environment.apiUrl;
     try {
       const res = await axios.get(`${apiUrl}/edition/current`)
       const data = res.data;
       this.edition = data.data;
-      console.log(data);
-      
+      this.isLoading = false;
     } catch (err) {
 
     }

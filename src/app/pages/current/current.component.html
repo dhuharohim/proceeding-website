@@ -14,7 +14,7 @@
               </div>
 
               <!-- content -->
-              <div class="content">
+              <div class="content" *ngIf="!isLoading">
                 <h5 style="font-family: Noto Serif; font-weight: 600; font-size: 20px;">
                   Vol. {{ edition.volume }} No. {{ edition.issue }} ({{ edition.publish_date | date: 'yyyy' }}): {{ edition.name_edition }}
                 </h5>
@@ -38,6 +38,9 @@
                     </div>
                   </ng-container>
                 </section>
+              </div>
+              <div class="loader d-flex justify-content-center" *ngIf="isLoading">
+                <mat-progress-spinner mode="indeterminate" diameter="32" strokeWidth="4" color="warn"></mat-progress-spinner>
               </div>
           </div>
       </div>

@@ -5,6 +5,7 @@ import { SidenavModule } from 'src/app/layout/sidenav/sidenav.module';
 import { CurrentComponent } from './current.component';
 import { ViewComponent } from './view/view.component';
 import { FormsModule } from '@angular/forms';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 const routes: Routes = [
   {
@@ -26,6 +27,7 @@ const routes: Routes = [
     CommonModule,
     SidenavModule,
     FormsModule,
+    MatProgressSpinnerModule,
     RouterModule.forChild(routes)
   ],
   providers: [DatePipe],
