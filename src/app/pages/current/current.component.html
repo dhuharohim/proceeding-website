@@ -15,55 +15,30 @@
 
               <!-- content -->
               <div class="content">
-
-
-                <h5 style="font-family: Noto Serif; font-weight: 600; font-size: 20px;">Vol. 10 No. 1 (2023): The Discourse of Civil and Political Rights in Theory and Practice</h5>
+                <h5 style="font-family: Noto Serif; font-weight: 600; font-size: 20px;">
+                  Vol. {{ edition.volume }} No. {{ edition.issue }} ({{ edition.publish_date | date: 'yyyy' }}): {{ edition.name_edition }}
+                </h5>
 
                 <p>
-                  <span style="font-weight: bold;">Published</span>: 2023-04-30 <br>
+                  <span style="font-weight: bold;">Published</span>: {{ edition.publish_date | date:'dd MMMM yyyy HH:mm' }} <br>
                 </p>
 
+                <p>{{ edition.description }}</p>
 
-                <section class="article">
+                <section class="article mt-5">
                   <h5 style="font-family: Noto Serif; font-weight: 600; font-size: 20px;">Article</h5>
 
-                  <ng-container *ngFor="let article of articles">
-                    <div class="card mb-4" style="width: 100%;">
+                  <ng-container *ngFor="let article of edition.get_articles">
+                    <div class="card mb-4" style="width: 100%;" (click)="viewArticle(edition, article)">
                       <div class="card-body">
-                        <h5 class="card-title">{{article.title}}</h5>
-                        <p class="card-text"><span style="font-weight: bold;">{{article.author}},</span> {{article.university}}</p>
-
+                        <h5 class="card-title">{{article.article_title}}</h5>
+                        <p class="card-text"><span style="font-weight: bold;">{{article.author}},</span> {{article.affiliation}}</p>
                         <p class="card-text">Abstract views: {{article.view}}</p>
-
                       </div>
                     </div>
                   </ng-container>
                 </section>
-
-                <section class="general-article">
-                  <h5 style="font-family: Noto Serif; font-weight: 600; font-size: 20px;">General Article</h5>
-
-                  <ng-container *ngFor="let generalArticle of generalArticles">
-                    <div class="card mb-4" style="width: 100%;">
-                      <div class="card-body">
-                        <h5 class="card-title">{{generalArticle.title}}</h5>
-                        <p class="card-text"><span style="font-weight: bold;">{{generalArticle.author}},</span> {{generalArticle.university}}</p>
-
-                        <p class="card-text">Abstract views: {{generalArticle.view}}</p>
-
-                      </div>
-                    </div>
-                  </ng-container>
-                </section>
-
-
-
-
-
               </div>
-
-
-
           </div>
       </div>
       <div class="col-md-4 p-4">

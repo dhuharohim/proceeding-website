@@ -1,0 +1,85 @@
+<div class="container" style="padding: 2rem 3rem;">
+    <div class="row">
+        <div class="col-md-8 p-2">
+            <div class="card p-4">
+                <!-- breadcrumbs -->
+                <div class="breadcrumb">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a [routerLink]="'/home'"> Home </a></li>
+                            <li class="breadcrumb-item"><a [routerLink]="'/current'">Current</a></li>
+                            <li class="breadcrumb-item"><a [routerLink]="'/current'">{{edition.name_edition}}</a></li>
+                            <li class="breadcrumb-item" aria-current="page">{{article.article_title}}</li>
+                        </ol>
+                    </nav>
+                </div>
+
+                <!-- Content -->
+                <div class="article mt-4">
+                    <h5 class="mb-5"> {{ article.article_title }} </h5>
+                    <div class="row mt-3" style="border-top: 2px solid #CCc;">
+                        <div class="col-md-8" style="border-right: 2px solid #ccc; padding-top: 2rem;">
+                            <strong>{{ article.author }}</strong>
+                            <p class="text-muted">{{ article.affiliation }}</p>
+                            <div class="keywords mt-5 mb-5">
+                                <strong>Keywords: <span>{{ article.keywords }}</span></strong>
+                            </div>
+                            <div class="abstract mt-5">
+                                <strong>Abstract</strong>
+                                <p class="mt-4" style="text-align: justify;">{{ article.abstract }}</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4" style="padding:15px 0;">
+                            <div class="published" style="padding: 10px;">
+                                <p style="margin-bottom: 0;" class="text-muted">Published</p>
+                                {{ article.created_at | date:'dd MMMM yyyy HH:mm' }}
+                            </div>
+                            <hr>
+                            <div class="how-to-cite" style="padding: 10px;">
+                                <p style="margin-bottom: 0;" class="text-muted">How to Cite</p>
+                                <div #appendCitation class="mt-2 mb-4"></div>
+                                <select class="form-select" [(ngModel)]="citationFormat" (ngModelChange)="changeFormat(citationFormat)">
+                                    <option value="acm">ACM</option>
+                                    <option value="acs">ACS</option>
+                                    <option value="apa">APA</option>
+                                    <option value="abnt">ABNT</option>
+                                    <option value="chicago">Chicago</option>
+                                    <option value="harvard">Harvard</option>
+                                    <option value="ieee">IEEE</option>
+                                    <option value="mla">MLA</option>
+                                    <option value="turabian">Turabian</option>
+                                    <option value="vancouver">Vancouver</option>
+                                    <optgroup label="Download Citation"> 
+                                        <option value="ris">Endnote/Zotero/Mendeley (RIS)</option>
+                                        <option value="bibtex">BibTeX</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                            <hr>
+                            <div class="issue" style="padding: 10px;">
+                                <p style="margin-bottom: 0;" class="text-muted">Issue</p>
+                                <a [routerLink]="'/current'">Vol. {{ edition.volume }} No. {{ edition.issue }} ({{ edition.publish_date | date: 'yyyy' }}): {{ edition.name_edition }}</a>
+                                <div class="section mt-4">
+                                    <p style="margin-bottom: 0;" class="text-muted">Section</p>
+                                    Articles
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="license" style="padding: 10px;">
+                                <p style="margin-bottom: 0;" class="text-muted">License</p>
+                                <p>Copyright (c) {{ getCurrentYear() }} Kamu Hukum Journal </p>
+                                <a target="_blank" href="https://creativecommons.org/licenses/by-nc/4.0/"><img src="https://licensebuttons.net/l/by-nc/4.0/88x31.png" alt=""></a>
+                                <p>This work is licensed under a <a href="https://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License.</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="col-md-4 p-4">
+            <app-sidenav></app-sidenav>
+        </div>
+    </div>
+  </div>
+  

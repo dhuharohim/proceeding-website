@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import axios from 'axios';
+import { environment } from 'src/app/environments/environment';
 
 @Component({
   selector: 'app-current',
@@ -7,41 +10,29 @@ import { Component } from '@angular/core';
 })
 export class CurrentComponent {
 
+  edition: any;
 
-  articles = [
-    {
-      id: 1,
-      title: 'Expanding the Limitations of the Protection and Processing of Children’s Personal Data: An Overview of Current Regulations, Challenges, and Recommendations',
-      author: 'Rudita Laode',
-      university: 'Universitas Indonesia,  Indonesia',
-      view: 28
+  constructor(private router: Router) { }
 
-    },
-    {
-      id: 2,
-      title: 'Reformulation of Contractus Sui Generis Wage Arrangement of Work Agreement After Covid-19 Pandemic',
-      author: 'Sihabudin Sihabudin',
-      university: 'Lecture at Faculty of Law, Brawijaya University,  Indonesia',
-      view: 20
 
-    },
-    {
-      id: 3,
-      title: 'Compensation for Citizens Due to Poor Public Service Delivery: Viewed From the Perspective of Civil Rights',
-      author: 'Aries Harianto',
-      university: 'Law Faculty - Jember University,  Indonesia',
-      view: 34
-    },
-  ];
 
-  generalArticles = [
-    {
-      id: 1,
-      title: 'Responsibility of Iran on the MV Mercer Street Attack in International Law',
-      author: 'Rudita Laode',
-      university: 'Universitas Indonesia,  Indonesia',
-      view: 68
+  ngOnInit() {
+    this.getCurrentData();
+  }
+  async getCurrentData() {
+    const apiUrl = environment.apiUrl;
+    try {
+      const res = await axios.get(`${apiUrl}/edition/current`)
+      const data = res.data;
+      this.edition = data.data;
+      console.log(data);
+      
+    } catch (err) {
+
     }
-  ];
+  }
 
+  viewArticle(edition:any , data: any) {
+    this.router.navigate(['/current/view', data.slug], { state: { data, edition } });
+  }
 }
